@@ -21,6 +21,38 @@ function validateCredentials(){
     }
 }
 
+function pwdVal(){
+    let password = (document.getElementById(pwd)).value;
+    // let regex = /^(?=.*[A-Z])(?=.*[!@#$%^&*])(?=.{8,})/;
+    
+
+    if(!isValid){
+        document.getElementById('password-error').style.display = "block";
+        event.preventDefault();
+    }
+}
+
+function pwdConfirm(){
+    if((document.getElementById('pwd')).value != (document.getElementById('pwd2')).value) {
+        document.getElementById('match-error').style.display = "block";
+        
+    }
+}
+
+//don't use, it doesn't work for some reason
+function validateall(){
+    pwdVal();
+    pwdConfirm();
+}
+
+function validate(){
+    regex=/^(?=.*[A-Z])(?=.*[!@#$%^&*])(?=.{8,})/;
+    let password = document.getElementByIda('pwd').value;
+    let isValid = regex.test(password);
+    let repassword = document.getElementById('pwd2').value;
+    
+}
+
+validate()
 
 
-console.log(userCredentials);
